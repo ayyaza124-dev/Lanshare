@@ -8,7 +8,7 @@ source.exclude_dirs = .github, bin, .buildozer, dist, build, tests
 source.exclude_patterns = windows_app.py
 version = 1.0.0
 
-requirements = python3,kivy==2.3.0,pyjnius,android
+requirements = python3==3.11.5,hostpython3==3.11.5,kivy==2.3.0,pyjnius,android
 
 orientation = portrait
 fullscreen = 0
@@ -20,6 +20,9 @@ android.ndk = 25b
 android.archs = arm64-v8a, armeabi-v7a
 android.accept_sdk_license = True
 android.allow_backup = False
+
+# use a stable python-for-android release (the newest one builds Python 3.14, which breaks Kivy 2.3.0)
+p4a.branch = v2024.01.21
 
 [buildozer]
 log_level = 2
